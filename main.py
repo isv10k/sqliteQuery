@@ -63,7 +63,7 @@ def third_query():
         LEFT JOIN Invoice as i on i.CustomerId = c.CustomerId
         LEFT JOIN InvoiceLine as il on il.InvoiceId = i.InvoiceId
         WHERE il.UnitPrice in (
-            SELECT max(UnitPrice) as maxim
+            SELECT max(UnitPrice)
             FROM InvoiceLine
         )
         ORDER BY c.FirstName            
